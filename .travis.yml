@@ -18,4 +18,5 @@ deploy:
   script:
     # push to dockerhub
     docker push back;
-  branch: master
+  on:
+    branch: master
