@@ -11,6 +11,7 @@ install:
   # install deps
   - npm install
 script:
+  - npm build
   - docker build -t back .
 deploy:
   provider: script
