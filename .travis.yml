@@ -12,11 +12,11 @@ install:
   - npm install
 script:
   - npm build
-  - docker build -t back .
+  - docker build -t macaicedo/back .
 deploy:
   provider: script
   script:
     # push to dockerhub
-    docker push back;
+    docker push macaicedo/back;
   on:
     branch: master
