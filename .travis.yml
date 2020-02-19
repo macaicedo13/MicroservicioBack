@@ -1,3 +1,20 @@
+sudo: required
 language: node_js
 node_js:
   - 13.0.1
+services:
+  - docker
+before_install:
+  # login to docker registries (dockerhub + heroku)
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+install:
+  # install deps
+  - npm install
+script:
+  - docker-compose build.
+deploy:
+  provider: script
+  script:
+    # push to dockerhub
+    docker push back;
+  branch: master
