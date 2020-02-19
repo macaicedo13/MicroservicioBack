@@ -12,6 +12,7 @@ install:
   - npm install
 script:
   - npm build
+  - docker-machine ip
   - docker build -t macaicedo/back .
 deploy:
   provider: script
