@@ -1,8 +1,8 @@
-import express from 'express';
-import morgan from 'morgan';
-import cors from 'cors';
-import path from 'path';
-import alumno from './routes/alumno';
+const express = require ('express');
+const morgan = require ('morgan');
+const cors = require ('cors');
+const path = require ('path');
+const alumno = require ('./routes/alumno');
 
 const app = express();
 
@@ -15,7 +15,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // Conexión base de datos
 const mongoose = require('mongoose');
-const uri = 'mongodb+srv://consultas:xAfBYW5Jph7PJfQu@microservice-7lfun.mongodb.net/alumnos?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://mongo:7QY4RJX94xxfSfCT@microservice-7lfun.mongodb.net/alumnos?retryWrites=true&w=majority';
+
+//'mongodb+srv://consultas:xAfBYW5Jph7PJfQu@microservice-7lfun.mongodb.net/alumnos?retryWrites=true&w=majority';
+//'mongodb://mongo:27017/Microservicio';
 const options = {useNewUrlParser: true, useCreateIndex: true};
 mongoose.connect(uri, options).then(
   () => { console.log('Conectado a DB') },

@@ -1,8 +1,8 @@
-import express from 'express';
+const express = require ('express');
 const router = express.Router();
 
 // importar el modelo alumno
-import Alumno from '../models/alumno';
+const Alumno = require ('../models/alumno');
 
 // Agregar una alumno
 router.post('/nuevo-alumno', async(req, res) => {

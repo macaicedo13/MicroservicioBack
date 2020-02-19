@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 
 const alumnoSchema = new Schema({
@@ -11,5 +11,4 @@ const alumnoSchema = new Schema({
 
 // Convertir a modelo
 const Alumno = mongoose.model('Alumno', alumnoSchema);
-
-export default Alumno;
+module.exports = Alumno;
