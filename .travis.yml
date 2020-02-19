@@ -11,7 +11,7 @@ install:
   # install deps
   - npm install
 script:
-  - docker-compose build.
+  - docker build -t /usr/src/app/back .
 deploy:
   provider: script
   script:
